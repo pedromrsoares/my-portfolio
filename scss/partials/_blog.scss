@@ -1,0 +1,148 @@
+.blog {
+  margin-top: 2em;
+
+
+
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+
+  }
+
+
+  @include media-breakpoint-down(md) {
+    .gallery {
+      display: grid;
+      grid-gap: .5em;
+      grid-template-columns: 1fr 1fr;
+
+      .card1 {
+        grid-column: span 2;
+      }
+
+      .card2, .card3 {
+        grid-column: span 1;
+      }
+
+      .info {
+        margin-top: 1em;
+        grid-column: span 2;
+        text-align: center;
+      }
+
+      .extra {
+        grid-column: span 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: .5em;
+      }
+    }
+  };
+
+  @include media-breakpoint-down(xs) {
+    .gallery {
+        display: flex;
+        flex-direction: column;
+
+        .card {
+          margin-bottom: 1em;
+        }
+
+        .extra {
+          display: flex;
+          flex-direction: column;
+        }
+    }
+  };
+
+
+
+  @include media-breakpoint-up(lg) {
+    .extra {
+      grid-column: span 4;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: .5em;
+    }
+
+    a {
+      grid-column: span 4;
+      align-self: center;
+      justify-self:center;
+    }
+
+    .card1 {
+      grid-column: span 2;
+    }
+  };
+
+}
+
+.info {
+  color: $black;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: $ff-s;
+  padding: .7em 1em;
+  border: 3px solid $black;
+  margin-top: 2em;
+
+  &:hover {
+    text-decoration: none;
+    color: $black;
+  }
+}
+
+.insta {
+  margin-top: 2em;
+}
+
+.boxes {
+
+  margin-top: 3em;
+
+  .box1 {
+    background-image: url(../img/insta1.jpg);
+  }
+  .box2 {
+    background-image: url(../img/insta2.jpg);
+  }
+  .box3 {
+    background-image: url(../img/insta3.jpg);
+  }
+  .box4 {
+    background-image: url(../img/insta4.jpg);
+  }
+  .box5 {
+    background-image: url(../img/insta5.jpg);
+  }
+  .box6 {
+    background-image: url(../img/insta6.jpg);
+  }
+
+  div {
+    background-size: cover;
+    background-position: center;
+    height: 12vw;
+    width: auto;
+    border-radius: .25em;
+  }
+
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  @include media-breakpoint-down(md) {
+    grid-template-columns: repeat(2, 1fr);
+
+    div {
+      height: 20vw;
+    }
+  };
+  @include media-breakpoint-down(xs) {
+    grid-template-columns: 1fr;
+
+    div {
+      height: 50vw;
+    }
+  };
+  grid-gap: .5em;
+
+}

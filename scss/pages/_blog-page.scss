@@ -1,0 +1,21 @@
+.blog-header {
+  h2 {
+    margin-top: 1em;
+    margin-bottom: 2em;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      background: $black;
+      width: 15%;
+      margin: .5em auto 0;
+    }
+  }
+}
+
+.blog-gallery {
+  h2, h4 {
+    margin-bottom: 1em;
+  }
+}
